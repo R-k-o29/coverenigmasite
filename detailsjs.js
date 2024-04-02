@@ -4,13 +4,13 @@ document.addEventListener("DOMContentLoaded", function () {
     try {
       // Fetch temperature data
       const temperatureResponse = await fetch(
-        "http://localhost:8888/http://192.168.117.92/temperature"
+        "https://cors-anywhere.herokuapp.com/http://192.168.117.92/temperature"
       );
       const temperatureData = await temperatureResponse.text();
 
       // Fetch water level data
       const waterLevelResponse = await fetch(
-        "http://localhost:8888/http://192.168.117.92/waterLevel"
+        "https://cors-anywhere.herokuapp.com/http://192.168.117.92/waterLevel"
       );
       const waterLevelData = await waterLevelResponse.text();
 
