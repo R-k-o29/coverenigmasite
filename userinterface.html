@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cover Enigma - Manhole Details</title>
+    <link rel="stylesheet" href="userinterfacecss.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Cover Enigma</h1>
+      <p>Click on the lid to view its details</p>
+    </header>
+
+    <div class="container">
+      <div class="playcard" onclick="viewDetails(1)">
+        <div class="playcard-image"></div>
+        <div class="playcard-content">
+          <h2>Manhole Lid 1</h2>
+          <p class="address">123 Street, City A</p>
+          <a href="#">View Details</a>
+        </div>
+      </div>
+
+      <div class="playcard" onclick="viewDetails(1)">
+        <div class="playcard-image"></div>
+        <div class="playcard-content">
+          <h2>Manhole Lid 1</h2>
+          <p class="address">123 Street, City A</p>
+          <a href="#">View Details</a>
+        </div>
+      </div>
+
+      <div class="playcard" onclick="viewDetails(1)">
+        <div class="playcard-image"></div>
+        <div class="playcard-content">
+          <h2>Manhole Lid 1</h2>
+          <p class="address">123 Street, City A</p>
+          <a href="#">View Details</a>
+        </div>
+      </div>
+
+      <div class="playcard" onclick="viewDetails(1)">
+        <div class="playcard-image"></div>
+        <div class="playcard-content">
+          <h2>Manhole Lid 1</h2>
+          <p class="address">123 Street, City A</p>
+          <a href="#">View Details</a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function viewDetails(id) {
+        // Redirect to the details page for the selected manhole lid
+        // You can handle the redirection using JavaScript if necessary
+        window.location.href = "details.html?id=" + id;
+      }
+    </script>
+  </body>
+</html>

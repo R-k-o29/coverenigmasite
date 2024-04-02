@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manhole Details - Cover Enigma</title>
+    <link rel="stylesheet" href="detailscss.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Manhole Details</h1>
+    </header>
+
+    <div class="container">
+      <div class="detail-card">
+        <h2>Temperature</h2>
+        <canvas id="temperature-chart"></canvas>
+        <p class="chart-value" id="temperature-value">--</p>
+      </div>
+
+      <div class="detail-card">
+        <h2>Water Level</h2>
+        <canvas id="water-level-chart"></canvas>
+        <p class="chart-value" id="water-level-value">--</p>
+      </div>
+
+      <div class="detail-card">
+        <h2>Toxicity</h2>
+        <canvas id="toxicity-chart"></canvas>
+        <p class="chart-value" id="toxicity-value">--</p>
+      </div>
+
+      <div class="detail-card">
+        <h2>Tilt</h2>
+        <p id="tilt">--</p>
+      </div>
+    </div>
+
+    <button id="release-button">Release Acids</button>
+
+    <script src="detailsjs.js"></script>
+  </body>
+</html>
