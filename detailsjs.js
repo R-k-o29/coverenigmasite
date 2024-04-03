@@ -1,38 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Function to fetch sensor data from NodeMCU via Fiddler proxy
+  // Function to fetch sensor data from the serverless function
   async function fetchSensorData() {
     try {
-      // Fetch temperature data
-      const temperatureResponse = await fetch(
-        "http://192.168.117.92/temperature"
-      );
-      const temperatureData = await temperatureResponse.text();
-
-      // Fetch water level data
-      const waterLevelResponse = await fetch(
-        "http://192.168.117.92/waterLevel"
-      );
-      const waterLevelData = await waterLevelResponse.text();
-
-      // Fetch toxicity data
-      const toxicityResponse = await fetch(
-        "http://192.168.117.92/toxicity"
-      );
-      const toxicityData = await toxicityResponse.text();
-
-      // Fetch tilt data
-      const tiltResponse = await fetch(
-        "http://192.168.117.92/tilt"
-      );
-      const tiltData = await tiltResponse.text();
+      // Fetch sensor data
+      const sensorResponse = await fetch("/api/getSensorData", {
+        method: "GET",
+      });
+      const sensorData = await sensorResponse.json();
 
       // Return fetched sensor data
-      return {
-        temperature: temperatureData,
-        waterLevel: waterLevelData,
-        toxicity: toxicityData,
-        tilt: tiltData,
-      };
+      return sensorData;
     } catch (error) {
       console.error("Error fetching sensor data:", error);
       return null;
