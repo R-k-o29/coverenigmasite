@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   async function fetchSensorData() {
     try {
       // Fetch sensor data
-      const sensorResponse = await fetch("/api/sensorData", {
+      const sensorResponse = await fetch("/functions/sensorData", {
         method: "GET",
       });
       const sensorData = await sensorResponse.json();
