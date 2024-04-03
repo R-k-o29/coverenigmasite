@@ -4,21 +4,21 @@ document.addEventListener("DOMContentLoaded", function () {
     try {
       // Fetch temperature data
       const temperatureResponse = await fetch(
-        "https://cors-anywhere.herokuapp.com/http://192.168.117.92/temperature"
+        "http://localhost:8888/http://192.168.117.92/temperature"
       );
       const temperatureData = await temperatureResponse.text();
 
       // Fetch water level data
       const waterLevelResponse = await fetch(
-        "https://cors-anywhere.herokuapp.com/http://192.168.117.92/waterLevel"
+        "http://localhost:8888/http://192.168.117.92/waterLevel"
       );
       const waterLevelData = await waterLevelResponse.text();
 
       // Fetch toxicity data
-      // const toxicityResponse = await fetch(
-      //   "http://localhost:8888/http://192.168.117.92/toxicity"
-      // );
-      // const toxicityData = await toxicityResponse.text();
+      const toxicityResponse = await fetch(
+        "http://localhost:8888/http://192.168.117.92/toxicity"
+      );
+      const toxicityData = await toxicityResponse.text();
 
       // Fetch tilt data
       const tiltResponse = await fetch(
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return {
         temperature: temperatureData,
         waterLevel: waterLevelData,
-        // toxicity: toxicityData,
+        toxicity: toxicityData,
         tilt: tiltData,
       };
     } catch (error) {
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
     // Update toxicity chart
-    // updateChart(toxicityChart, parseFloat(data.toxicity), "toxicity-value");
+    updateChart(toxicityChart, parseFloat(data.toxicity), "toxicity-value");
 
     // Update tilt
     document.getElementById("tilt").textContent = data.tilt;
@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Update charts on page load
   const temperatureChart = createChart("temperature-chart", "Temperature");
   const waterLevelChart = createChart("water-level-chart", "Water Level");
-  // const toxicityChart = createChart("toxicity-chart", "Toxicity");
+  const toxicityChart = createChart("toxicity-chart", "Toxicity");
   updateCharts();
 
   // Update charts every 5 seconds
