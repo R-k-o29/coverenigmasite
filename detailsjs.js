@@ -4,25 +4,25 @@ document.addEventListener("DOMContentLoaded", function () {
     try {
       // Fetch temperature data
       const temperatureResponse = await fetch(
-        "http://localhost:8888/http://192.168.117.92/temperature"
+        "http://192.168.117.92/temperature"
       );
       const temperatureData = await temperatureResponse.text();
 
       // Fetch water level data
       const waterLevelResponse = await fetch(
-        "http://localhost:8888/http://192.168.117.92/waterLevel"
+        "http://192.168.117.92/waterLevel"
       );
       const waterLevelData = await waterLevelResponse.text();
 
       // Fetch toxicity data
       const toxicityResponse = await fetch(
-        "http://localhost:8888/http://192.168.117.92/toxicity"
+        "http://192.168.117.92/toxicity"
       );
       const toxicityData = await toxicityResponse.text();
 
       // Fetch tilt data
       const tiltResponse = await fetch(
-        "http://localhost:8888/http://192.168.117.92/tilt"
+        "http://192.168.117.92/tilt"
       );
       const tiltData = await tiltResponse.text();
 
